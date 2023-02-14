@@ -1,0 +1,20 @@
+{
+  "$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "6.3.0",
+    "generators": {
+      "v1.9": {
+        "generatorName": "typescript-fetch",
+        "output": "./snapshots/WowzaStreamingEngineApiClient-v4-4.8.21",
+        "inputSpec": "./wse-rest-api-openapi-v3.json",
+        "additionalProperties": {
+          "npmName": "@liveinstantly/wowza-streaming-engine-api-client",
+          "npmVersion": "4.8.21",
+          "snapshot": false,
+          "supportsES6": true
+        }
+      }
+    }
+  }
+}

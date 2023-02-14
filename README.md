@@ -18,6 +18,24 @@ Currently, we are developing a NPM module package of Wowza Video REST API Client
 
 Now working on a documentation.
 
+## How to run OpenAPI Generator tools
+
+You will need to create `.env` file and add the following line to the file before running `yarn` command. Please add your Wowza Streaming Engine API Documentation Server Host and Port apporopriately.
+
+```shell
+WSE_REST_API_ENDPOINT=localhost:8089
+```
+
+Please run the following commands:
+
+```shell
+yarn
+yarn run codegen
+```
+
+This command will generate the API client source code templates under "**./snapshots**" folder.
+As of Feb 7, 2023, there are some recommended improvments in the code templates. We will do more improvement later for a future NPM packaged version.
+
 ## References: Wowza Streaming Engine REST API
 
 ### Use Wowza Streaming Engine REST API reference documentation with Swagger Codegen

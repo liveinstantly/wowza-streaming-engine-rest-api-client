@@ -1,0 +1,422 @@
+--- ".\\wse-rest-api-swagger-v2.json.orig"	1900-01-00 00:00:00 +0000
++++ ".\\wse-rest-api-swagger-v2.json"	1900-01-00 00:00:00 +0000
+@@ -8,5 +8,6 @@
+   "basePath": "/",
+   "schemes": [
++    "https",
+     "http"
+   ],
+   "paths": {
+@@ -1698,6 +1699,13 @@
+             "required": true,
+             "type": "string",
+             "uniqueItems": false
++          },
++          {
++            "in": "path",
++            "name": "sourceName",
++            "required": true,
++            "type": "string",
++            "uniqueItems": false
+           }
+         ],
+         "responses": {
+@@ -1745,6 +1753,13 @@
+             "required": true,
+             "type": "string",
+             "uniqueItems": false
++          },
++          {
++            "in": "path",
++            "name": "sourceName",
++            "required": true,
++            "type": "string",
++            "uniqueItems": false
+           }
+         ],
+         "responses": {
+@@ -1797,6 +1812,13 @@
+             "uniqueItems": false
+           },
+           {
++            "in": "path",
++            "name": "sourceName",
++            "required": true,
++            "type": "string",
++            "uniqueItems": false
++          },
++          {
+             "in": "body",
+             "name": "body",
+             "required": true,
+@@ -1859,6 +1881,13 @@
+             "uniqueItems": false
+           },
+           {
++            "in": "path",
++            "name": "sourceName",
++            "required": true,
++            "type": "string",
++            "uniqueItems": false
++          },
++          {
+             "in": "body",
+             "name": "body",
+             "required": true,
+@@ -2220,6 +2249,13 @@
+             "required": true,
+             "type": "string",
+             "uniqueItems": false
++          },
++          {
++            "in": "path",
++            "name": "storeName",
++            "required": true,
++            "type": "string",
++            "uniqueItems": false
+           }
+         ],
+         "responses": {
+@@ -2267,6 +2303,13 @@
+             "required": true,
+             "type": "string",
+             "uniqueItems": false
++          },
++          {
++            "in": "path",
++            "name": "storeName",
++            "required": true,
++            "type": "string",
++            "uniqueItems": false
+           }
+         ],
+         "responses": {
+@@ -2319,6 +2362,13 @@
+             "uniqueItems": false
+           },
+           {
++            "in": "path",
++            "name": "storeName",
++            "required": true,
++            "type": "string",
++            "uniqueItems": false
++          },
++          {
+             "in": "body",
+             "name": "body",
+             "required": true,
+@@ -2381,6 +2431,13 @@
+             "uniqueItems": false
+           },
+           {
++            "in": "path",
++            "name": "storeName",
++            "required": true,
++            "type": "string",
++            "uniqueItems": false
++          },
++          {
+             "in": "body",
+             "name": "body",
+             "required": true,
+@@ -3003,6 +3060,15 @@
+             "required": true,
+             "type": "string",
+             "uniqueItems": false
++          },
++          {
++            "default": "default",
++            "description": "",
++            "in": "path",
++            "name": "publisher",
++            "required": true,
++            "type": "string",
++            "uniqueItems": false
+           }
+         ],
+         "responses": {
+@@ -3050,6 +3116,15 @@
+             "required": true,
+             "type": "string",
+             "uniqueItems": false
++          },
++          {
++            "default": "default",
++            "description": "",
++            "in": "path",
++            "name": "publisher",
++            "required": true,
++            "type": "string",
++            "uniqueItems": false
+           }
+         ],
+         "responses": {
+@@ -3102,6 +3177,15 @@
+             "uniqueItems": false
+           },
+           {
++            "default": "default",
++            "description": "",
++            "in": "path",
++            "name": "publisher",
++            "required": true,
++            "type": "string",
++            "uniqueItems": false
++          },
++          {
+             "in": "body",
+             "name": "body",
+             "required": true,
+@@ -3285,7 +3369,7 @@
+         ],
+         "deprecated": false,
+         "description": "This API is available in builds 15089 or later.",
+-        "operationId": "getTranscoderConfig",
++        "operationId": "getServerTranscoderConfig",
+         "summary": "Retrieves the Transcoder information"
+       }
+     },
+@@ -21275,7 +21359,6 @@
+         "applications"
+       ]
+     },
+-    "Boolean": {},
+     "BuyDRMStreamMapConfig": {
+       "properties": {
+         "contentID": {
+@@ -21330,7 +21413,7 @@
+       "properties": {
+         "buyDRMStreamMaps": {
+           "items": {
+-            "$ref": "#/definitions/BuyDRMStreamMapsConfig$BuyDRMStreamMapConfig",
++            "$ref": "#/definitions/BuyDRMStreamMapConfig",
+             "uniqueItems": false
+           },
+           "type": "array",
+@@ -21367,7 +21450,8 @@
+     "CurrentApplicationStatistics": {
+       "properties": {
+         "bytesIn": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "bytesInRate": {
+@@ -21376,7 +21460,8 @@
+           "uniqueItems": false
+         },
+         "bytesOut": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "bytesOutRate": {
+@@ -21397,11 +21482,13 @@
+           "uniqueItems": false
+         },
+         "totalConnections": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "uptime": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "version": {
+@@ -21495,43 +21582,53 @@
+     "CurrentMachineStatistics": {
+       "properties": {
+         "connectionCount": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "cpuIdle": {
+-          "$ref": "#/definitions/Integer",
++          "format": "int32",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "cpuSystem": {
+-          "$ref": "#/definitions/Integer",
++          "format": "int32",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "cpuUser": {
+-          "$ref": "#/definitions/Integer",
++          "format": "int32",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "diskFree": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "diskUsed": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "heapFree": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "heapUsed": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "memoryFree": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "memoryUsed": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "saveFieldList": {
+@@ -21575,11 +21672,13 @@
+     "CurrentVHostStatistics": {
+       "properties": {
+         "bytesIn": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "bytesOut": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "saveFieldList": {
+@@ -21595,11 +21694,13 @@
+           "uniqueItems": false
+         },
+         "totalConnections": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "uptime": {
+-          "$ref": "#/definitions/Long",
++          "format": "int64",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "version": {
+@@ -22428,7 +22529,7 @@
+           "uniqueItems": false
+         },
+         "webRtcEnable": {
+-          "$ref": "#/definitions/Boolean",
++          "type": "boolean",
+           "uniqueItems": false
+         }
+       },
+@@ -22819,11 +22920,10 @@
+         "instanceList"
+       ]
+     },
+-    "Integer": {},
+     "LiveEncoderConfig": {
+       "properties": {
+         "output": {
+-          "$ref": "#/definitions/LiveEncoderConfig$Output",
++          "$ref": "#/definitions/Output",
+           "uniqueItems": false
+         },
+         "saveFieldList": {
+@@ -22874,7 +22974,7 @@
+       "properties": {
+         "loggers": {
+           "items": {
+-            "$ref": "#/definitions/Log4js$WMSLoggerConfig",
++            "$ref": "#/definitions/WMSLoggerConfig",
+             "uniqueItems": false
+           },
+           "type": "array",
+@@ -22914,7 +23014,6 @@
+         "serverName"
+       ]
+     },
+-    "Long": {},
+     "MediaCacheApplicationStoreAction": {
+       "properties": {
+         "appName": {
+@@ -24054,11 +24153,11 @@
+     "Output": {
+       "properties": {
+         "rtmp": {
+-          "$ref": "#/definitions/LiveEncoderConfig$RTMP",
++          "$ref": "#/definitions/RTMP",
+           "uniqueItems": false
+         },
+         "video": {
+-          "$ref": "#/definitions/LiveEncoderConfig$VideoSettings",
++          "$ref": "#/definitions/VideoSettings",
+           "uniqueItems": false
+         }
+       },
+@@ -26761,7 +26860,8 @@
+           "uniqueItems": false
+         },
+         "statusCode": {
+-          "$ref": "#/definitions/Integer",
++          "format": "int32",
++          "type": "integer",
+           "uniqueItems": false
+         },
+         "statusText": {
+@@ -29621,7 +29721,7 @@
+         },
+         "verimatrixStreamMaps": {
+           "items": {
+-            "$ref": "#/definitions/VerimatrixStreamMapsConfig$VerimatrixStreamMapConfig",
++            "$ref": "#/definitions/VerimatrixStreamMapConfig",
+             "uniqueItems": false
+           },
+           "type": "array",
+@@ -29833,6 +29933,22 @@
+         "serverName",
+         "advancedSettings"
+       ]
++    },
++    "IDvrConverterStore": {
++      "properties": {
++      }
++    },
++    "IDvrConverterStoreSummary": {
++      "properties": {
++      }
++    },
++    "IDvrConverterGroupStatus": {
++      "properties": {
++      }
++    },
++    "IMediaCacheItemSummary": {
++      "properties": {
++      }
+     }
+   },
+   "tags": [

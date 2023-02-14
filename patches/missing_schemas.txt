@@ -1,0 +1,4 @@
+IDvrConverterStore
+IDvrConverterStoreSummary
+IDvrConverterGroupStatus
+IMediaCacheItemSummary

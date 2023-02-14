@@ -1,0 +1,12 @@
+{
+    "scripts": {
+        "get-spec-swagger-v2": "api-spec-converter --from=swagger_1 --to=swagger_2 http://127.0.01:8089/ > wse-rest-api-swagger-v2.json",
+        "patch": "patch -p1 < patches/wse-rest-api-swagger-v2.json-patch.diff",
+        "convert-spec-to-openapi-v3": "api-spec-converter --from=swagger_2 --to=openapi_3 --order=openapi wse-rest-api-swagger-v2.json > wse-rest-api-openapi-v3.json",
+        "og": "openapi-generator-cli generate -i ./wse-rest-api-openapi-v3.json -g typescript-fetch -o snapshots/WowzaStreamingEngineApiClient-v4-4.8.21 > ./snapshots/og-cli.log"
+    },
+    "devDependencies": {
+        "api-spec-converter": "^2.12.0",
+        "@openapitools/openapi-generator-cli": "^2.5.2"
+    }
+}
